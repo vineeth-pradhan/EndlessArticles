@@ -8,11 +8,11 @@ router.get('/articles/:id', function(req, res, next) {
   const idParam = req.params['id']
   switch(idParam) {
     default:
-      if(httpStatus = httpStatuses.find(i => i == req.params['id'])) {
-        return res.status(httpStatus).render('index', { title: 'Article List', status: httpStatus, httpStatus: httpStatus });
+      if(httpStatus = parseInt(httpStatuses.find(i => i == req.params['id']))) {
+        res.status(httpStatus).render('index', { title: 'Article List', status: httpStatus, httpStatus: httpStatus });
       }
       else {
-        return res.status(404).render('index', { title: 'Article List', status: 404, httpStatus: 404 });
+        res.status(404).render('index', { title: 'Article List', status: 404, httpStatus: 404 });
       }
   }
 });

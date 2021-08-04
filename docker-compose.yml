@@ -1,0 +1,7 @@
+version: '3.1'
+
+services:
+  web:
+    image: endless-articles
+    ports:
+      - "5000:80"
